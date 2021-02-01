@@ -3,9 +3,9 @@
 var times = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];  
 
 //$(".container").append("<p>Hello</p>");
-var allCont = document.querySelector(".time");
-var allEnt = document.querySelector(".entry");
-var saveButton = document.querySelector(".saveButton");
+// var allCont = document.querySelector(".time");
+// var allEnt = document.querySelector(".entry");
+// var saveButton = document.querySelector(".saveButton");
 // for (var i =0; i < times.length; i++){
     
 //     var eachTime = document.createElement("p");
@@ -31,3 +31,17 @@ for (var i =0; i < times.length; i++){
     $("div.saveButton").append(time3);
     
 }
+
+$("button").click(function(event){
+    // $(this).hide();
+    
+    var clickedBtn = event.target.id;
+    console.log("clickedBtn: ", clickedBtn);
+    
+    localStorage.setItem("input", event.target);
+
+    // if(event !== true){
+
+    // }
+
+  });

@@ -63,6 +63,7 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  padding: 20px;
   
   
 }
@@ -72,8 +73,15 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+input{
+  width: 105%;
+  text-align: left;
+}
+
+
 .container {
   align-items: center;
   align-self: center;
-  
+  vertical-align: middle;
 }
+
