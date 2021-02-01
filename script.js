@@ -26,7 +26,7 @@ for (var i =0; i < times.length; i++){
     var time2 = $("<input type='text'></input>").addClass("row present textarea description").attr('id',"text" + times[i]);
     $("div.entry").append(time2);
     
-    var time3 = $("<button></button>").addClass("row saveBtn i").attr('id', times[i]);
+    var time3 = $("<button class='fas fa-save'></button>").addClass("row saveBtn i").attr('id', times[i]);
     
     $("div.saveButton").append(time3);
     
