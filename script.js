@@ -6,55 +6,28 @@ var times = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 var allCont = document.querySelector(".time");
 var allEnt = document.querySelector(".entry");
 var saveButton = document.querySelector(".saveButton");
+// for (var i =0; i < times.length; i++){
+    
+//     var eachTime = document.createElement("p");
+    
+//     eachTime.classList.add("hour", "row", "description");
+//     eachTime.textContent += times[i];
+//     allCont.appendChild(eachTime);
+    
+
+
+// }
+
 for (var i =0; i < times.length; i++){
     
-    var eachTime = document.createElement("p");
+    var time1 = $("<a></a>").addClass("hour container row").text(times[i]);
+    $("div.time").append(time1);
     
-    eachTime.classList.add("hour", "row", "description");
-    eachTime.textContent += times[i];
-    allCont.appendChild(eachTime);
+    var time2 = $("<input type='text'></input>").addClass("row present textarea description").attr('id',"text" + times[i]);
+    $("div.entry").append(time2);
     
-    // var eachEnt = document.createElement("form");
-    // //$("p").addClass("hour", "row");
-    // eachEnt.classList.add("present", "row", "textarea", "description");
-    // //eachEnt.textContent += times[i];
-    // allEnt.appendChild(eachEnt);
+    var time3 = $("<button></button>").addClass("row saveBtn i").attr('id', times[i]);
     
-    // var eachButton = document.createElement("button");
-    // //var eachImage = document.createElement("i");
-    // //eachImage.classList.add("fas fa-save");
-    // //$("p").addClass("hour", "row");
-    // eachButton.classList.add( "row", "description", "saveBtn", "saveBtn", "saveBtn", "i:hover");
-    // //eachButton.textContent = document.createElement("i").classList.add("fas fa-save") + times[i];
-    // saveButton.appendChild(eachButton);
+    $("div.saveButton").append(time3);
     
-    //var eachButton = document.createElement("button");
-
 }
-//Individual sections to append data
-// var allEnt = document.querySelector(".entry");
-// for (var i =0; i < times.length; i++){
-    
-//     var eachEnt = document.createElement("p");
-//     //$("p").addClass("hour", "row");
-//     eachEnt.classList.add("present", "row");
-//     eachEnt.textContent += times[i];
-//     allEnt.appendChild(eachEnt);
-    
-//     //var eachButton = document.createElement("button");
-
-// }
-
-
-// for (var i =0; i < times.length; i++){
-//     var saveButton = document.querySelector(".saveButton");
-//     var eachButton = document.createElement("button");
-//     var eachImage
-//     //$("p").addClass("hour", "row");
-//     eachButton.classList.add( "saveBtn", "row");
-//     eachButton.textContent = document.createElement("i") + times[i];
-//     saveButton.appendChild(eachButton);
-    
-//     //var eachButton = document.createElement("button");
-
-// }
