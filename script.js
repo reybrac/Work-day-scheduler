@@ -1,47 +1,50 @@
-//var hello = document.querySelector("container");
+window.onload = function(){
+    switchColor();
+    nineAM();
+    // tenAM();
+    // elevenAM();
+    // twelvePM();
+    // onePM();
+    // twoPM();
+    // threePM();
+    // fourPM();
+    // fivePM();
+   }
+  
+  // WHEN I open the planner
+  // THEN the current day and time is displayed at the top of the calendar
+  
+  var currentDay = moment().format("dddd LL");
+  $("#currentDay").append(currentDay);
+  
+  var currentTime = moment().format("LT");
+  $("#currentTime").append(currentTime);
+  
+ 
+  
+  var now = new Date().getHours();
+  
+  function switchColor() {
+    if (now > 9) {
+      $("#text9am").addClass("past");
+    } else  if (now >= 9 && now < 10) {
+      $("#text9am").addClass("present");
+    }
+  }
 
-var times = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];  
-
-//$(".container").append("<p>Hello</p>");
-// var allCont = document.querySelector(".time");
-// var allEnt = document.querySelector(".entry");
-// var saveButton = document.querySelector(".saveButton");
-// for (var i =0; i < times.length; i++){
-    
-//     var eachTime = document.createElement("p");
-    
-//     eachTime.classList.add("hour", "row", "description");
-//     eachTime.textContent += times[i];
-//     allCont.appendChild(eachTime);
-    
-
-
-// }
-
-for (var i =0; i < times.length; i++){
-    
-    var time1 = $("<a></a>").addClass("hour container row").text(times[i]);
-    $("div.time").append(time1);
-    
-    var time2 = $("<input type='text'></input>").addClass("row present textarea description").attr('id',"text" + times[i]);
-    $("div.entry").append(time2);
-    
-    var time3 = $("<button class='fas fa-save'></button>").addClass("row saveBtn i").attr('id', times[i]);
-    
-    $("div.saveButton").append(time3);
-    
-}
-
-$("button").click(function(event){
-    // $(this).hide();
-    
-    var clickedBtn = event.target.id;
-    console.log("clickedBtn: ", clickedBtn);
-    
-    localStorage.setItem("input", event.target);
-
-    // if(event !== true){
-
-    // }
-
-  });
+function nineAM() {
+    var input_textarea = document.querySelector("#text9am");
+    var output_div = document.querySelector("#text9am");
+    var save_button = document.querySelector("#button9am");
+  
+    save_button.addEventListener("click", updateOutput);
+  
+    output_div.textContent = localStorage.getItem("content");
+    input_textarea.value = localStorage.getItem("content");
+  
+    function updateOutput() {
+      localStorage.setItem("content", input_textarea.value);
+  
+      output_div.textContent = input_textarea.value;
+    }
+  }
