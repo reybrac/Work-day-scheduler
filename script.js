@@ -1,7 +1,7 @@
 window.onload = function(){
     switchColor();
     nineAM();
-    // tenAM();
+    tenAM();
     // elevenAM();
     // twelvePM();
     // onePM();
@@ -29,15 +29,24 @@ window.onload = function(){
       $("#text9am").addClass("past");
     } else  if (now >= 9 && now < 10) {
       $("#text9am").addClass("present");
+    } else if (now > 10){
+      $("#text9am").addClass("future");
+    }
+    if (now > 10) {
+      $("#text10am").addClass("past");
+    } else  if (now >= 10 && now < 11) {
+      $("#text10am").addClass("present");
+    } else if (now > 11){
+      $("#text10am").addClass("future");
     }
   }
 
 function nineAM() {
     var input_textarea = document.querySelector("#text9am");
+    //var input_textarea = $("#text9am");
     var output_div = document.querySelector("#text9am");
-    var save_button = document.querySelector("#button9am");
-  
-    save_button.addEventListener("click", updateOutput);
+    
+    $("button").on("click", updateOutput);
   
     output_div.textContent = localStorage.getItem("content");
     input_textarea.value = localStorage.getItem("content");
@@ -46,5 +55,22 @@ function nineAM() {
       localStorage.setItem("content", input_textarea.value);
   
       output_div.textContent = input_textarea.value;
+    }
+  }
+
+  function tenAM() {
+    var input_textarea2 = document.querySelector("#text10am");
+    
+    var output_div2 = document.querySelector("#text10am");
+    
+    $("button").on("click", updateOutput2);
+  
+    output_div2.textContent = localStorage.getItem("content2");
+    input_textarea2.value = localStorage.getItem("content2");
+  
+    function updateOutput2() {
+      localStorage.setItem("content2", input_textarea2.value);
+  
+      output_div2.textContent = input_textarea2.value;
     }
   }

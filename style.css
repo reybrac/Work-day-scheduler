@@ -6,6 +6,7 @@ body {
 
 textarea{
   background: transparent;
+  font-size: xx-large;
   border: none;
   resize: none;
   color: #000000;
@@ -73,15 +74,4 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-input{
-  width: 105%;
-  text-align: left;
-}
-
-
-.container {
-  align-items: center;
-  align-self: center;
-  vertical-align: middle;
-}
 
