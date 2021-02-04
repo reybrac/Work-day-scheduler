@@ -1,18 +1,17 @@
-window.onload = function(){
+$(document).ready(function(){
     switchColor();
     nineAM();
     tenAM();
-    // elevenAM();
-    // twelvePM();
+    elevenAM();
+    twelvePM();
     // onePM();
     // twoPM();
     // threePM();
     // fourPM();
     // fivePM();
-   }
+   });
   
-  // WHEN I open the planner
-  // THEN the current day and time is displayed at the top of the calendar
+  
   
   var currentDay = moment().format("dddd LL");
   $("#currentDay").append(currentDay);
@@ -24,53 +23,110 @@ window.onload = function(){
   
   var now = new Date().getHours();
   
+
+// 9am function to set value to local storage and retrieve the information
+function nineAM() {
+    var input_textarea9 = $("#text9am"); 
+    //var input_textarea9 = document.querySelector("#text9am");
+    var output_div9 = $("#text9am");
+    //var output_div9 = document.querySelector("#text9am");
+    
+    $("button").on("click", updateOutput9);
+    input_textarea9.val(localStorage.getItem("content9")); 
+    output_div9.text(localStorage.getItem("content9"));
+    //output_div9.textContent = localStorage.getItem("content9");
+    //input_textarea9.value = localStorage.getItem("content9");
+  
+    function updateOutput9() {
+      localStorage.setItem("content9", input_textarea9.val());
+  
+      output_div9.textContent = input_textarea9.val();
+    }
+  }
+
+  function tenAM() {
+    var input_textarea10 = document.querySelector("#text10am");
+    
+    var output_div10 = document.querySelector("#text10am");
+    
+    $("button").on("click", updateOutput10);
+  
+    output_div10.textContent = localStorage.getItem("content10");
+    input_textarea10.value = localStorage.getItem("content10");
+  
+    function updateOutput10() {
+      localStorage.setItem("content10", input_textarea10.value);
+  
+      output_div10.textContent = input_textarea10.value;
+    }
+  }
+
+  function elevenAM() {
+    var input_textarea11 = document.querySelector("#text11am");
+    
+    var output_div11 = document.querySelector("#text11am");
+    
+    $("button").on("click", updateOutput11);
+  
+    output_div11.textContent = localStorage.getItem("content11");
+    input_textarea11.value = localStorage.getItem("content11");
+  
+    function updateOutput11() {
+      localStorage.setItem("content11", input_textarea11.value);
+  
+      output_div11.textContent = input_textarea11.value;
+    }
+  }
+
+  function twelvePM() {
+    var input_textarea12 = document.querySelector("#text12pm");
+    
+    var output_div12 = document.querySelector("#text12pm");
+    
+    $("button").on("click", updateOutput12);
+  
+    output_div12.textContent = localStorage.getItem("content12");
+    input_textarea12.value = localStorage.getItem("content12");
+  
+    function updateOutput12() {
+      localStorage.setItem("content12", input_textarea12.value);
+  
+      output_div12.textContent = input_textarea12.value;
+    }
+  }
+
+
+
+
+
+
   function switchColor() {
     if (now > 9) {
       $("#text9am").addClass("past");
     } else  if (now >= 9 && now < 10) {
       $("#text9am").addClass("present");
-    } else if (now > 10){
+    } else if (now < 9){
       $("#text9am").addClass("future");
     }
     if (now > 10) {
       $("#text10am").addClass("past");
     } else  if (now >= 10 && now < 11) {
       $("#text10am").addClass("present");
-    } else if (now > 11){
+    } else if (now < 10){
       $("#text10am").addClass("future");
     }
-  }
-
-function nineAM() {
-    var input_textarea = document.querySelector("#text9am");
-    //var input_textarea = $("#text9am");
-    var output_div = document.querySelector("#text9am");
-    
-    $("button").on("click", updateOutput);
-  
-    output_div.textContent = localStorage.getItem("content");
-    input_textarea.value = localStorage.getItem("content");
-  
-    function updateOutput() {
-      localStorage.setItem("content", input_textarea.value);
-  
-      output_div.textContent = input_textarea.value;
+    if (now > 11) {
+      $("#text11am").addClass("past");
+    } else  if (now >= 11 && now < 12) {
+      $("#text11am").addClass("present");
+    } else if (now < 11){
+      $("#text11am").addClass("future");
     }
-  }
-
-  function tenAM() {
-    var input_textarea2 = document.querySelector("#text10am");
-    
-    var output_div2 = document.querySelector("#text10am");
-    
-    $("button").on("click", updateOutput2);
-  
-    output_div2.textContent = localStorage.getItem("content2");
-    input_textarea2.value = localStorage.getItem("content2");
-  
-    function updateOutput2() {
-      localStorage.setItem("content2", input_textarea2.value);
-  
-      output_div2.textContent = input_textarea2.value;
+    if (now > 12) {
+      $("#text12pm").addClass("past");
+    } else  if (now >= 12 && now < 13) {
+      $("#text12pm").addClass("present");
+    } else if (now < 12){
+      $("#text12pm").addClass("future");
     }
   }
