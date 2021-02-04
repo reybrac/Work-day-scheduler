@@ -20,14 +20,10 @@ $(document).ready(function(){
 
 // 9am function to set value to local storage and retrieve the information
 function nineAm() {
-    //var input_textarea9 = document.querySelector("#text9am");
-    //var output_div9 = document.querySelector("#text9am");
     var input_textarea9 = $("#text9am"); 
     var output_div9 = $("#text9am");
 
     $("button").on("click", updateOutput9);
-    //output_div9.textContent = localStorage.getItem("content9");
-    //input_textarea9.value = localStorage.getItem("content9");
         output_div9.text(localStorage.getItem("content9"));
         input_textarea9.val(localStorage.getItem("content9")); 
     
