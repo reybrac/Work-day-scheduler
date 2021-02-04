@@ -35,6 +35,7 @@ function nineAm() {
     function updateOutput9() {
         localStorage.setItem("content9", input_textarea9.val());
         output_div9.textContent = input_textarea9.val();
+        location.reload();
     }
   }
 
