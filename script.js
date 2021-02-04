@@ -213,4 +213,30 @@ function nineAm() {
           $("#text2pm").addClass("future");
     }
 
+    //Checks if current time is within 3pm and assigns appropriate color
+    if (now > 15) {
+        $("#text3pm").addClass("past");
+      } else  if (now >= 15 && now < 16) {
+          $("#text3pm").addClass("present");
+      } else if (now < 15){
+          $("#text3pm").addClass("future");
+    }
+
+    //Checks if current time is within 4pm and assigns appropriate color
+    if (now > 16) {
+        $("#text4pm").addClass("past");
+      } else  if (now >= 16 && now < 17) {
+          $("#text4pm").addClass("present");
+      } else if (now < 16){
+          $("#text4pm").addClass("future");
+    }
+
+    //Checks if current time is within 5pm and assigns appropriate color
+    if (now > 17) {
+        $("#text5pm").addClass("past");
+      } else  if (now >= 17 && now < 18) {
+          $("#text5pm").addClass("present");
+      } else if (now < 17){
+          $("#text5pm").addClass("future");
+    }
   }
